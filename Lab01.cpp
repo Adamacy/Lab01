@@ -7,6 +7,7 @@
 #include <complex>
 #include <iostream>
 #include <iterator>
+#include "Lab01.h"
 
 class Student {
 
@@ -77,9 +78,44 @@ class Student {
         }
 };
 
+class Complex {
+    float re;
+    float im;
 
-int main()
-{
+public:
+    Complex(float a = 0, float b = 0) {
+        re = a;
+        im = b;
+    }
+    void setR(float a) {
+        re = a;
+    }
+    float getRe() {
+        return re;
+    }
+    void setIm(float b) {
+        im = b;
+    }
+    float getIm() {
+        return im;
+    }
+    void print() {
+        if (im < 0) {
+            std::cout << re << im << "i";
+        }
+        else {
+            std::cout << re << "+" << im << "i";
+        }
+    }
+    Complex add(Complex complex) {
+        re = re + complex.re;
+        im = im + complex.im;
+        return Complex(re, im);
+    }
+
+};
+
+void homeWorkPart1() {
     Student student("Adam", "Jakubiak");
     student.setAlbumNumber("123456");
     student.addGrade(2.0);
@@ -88,5 +124,32 @@ int main()
     student.calculateGrade();
     student.print();
     student.semesterPassed();
+}
+
+void homeWorkPart2() {
+    Complex a(1.0, -2.0); // creates 1-2i
+    Complex b(3.14); // creates 3.14
+
+    b.setIm(-5);
+
+    Complex c = a.add(b);
+
+    c.print(); // prints 4.14-7i
+}
+
+int main()
+{
+    int choice;
+    std::cout << "Which task do you want to run (1-Student, 2-Complex): ";
+    std::cin >> choice;
+    if (choice == 1) {
+        homeWorkPart1();
+    }
+    else if (choice == 2) {
+        homeWorkPart2();
+    }
+    else {
+        std::cout << "Wrong task number";
+    }
     return 0;
 }
