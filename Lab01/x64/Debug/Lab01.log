@@ -1,0 +1,3 @@
+﻿  Lab01.cpp
+D:\Collage\Lab01\Lab01.cpp(70,30): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  Lab01.vcxproj -> D:\Collage\Lab01\x64\Debug\Lab01.exe
