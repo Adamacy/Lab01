@@ -7,7 +7,6 @@
 #include <complex>
 #include <iostream>
 #include <iterator>
-#include "Lab01.h"
 
 class Student {
 
@@ -17,8 +16,6 @@ class Student {
         std::vector<float> grades;
         std::string albumNumber;
         float finalGrade;
-
-        
 
     public:
         Student(std::string n, std::string s) {
@@ -87,7 +84,7 @@ public:
         re = a;
         im = b;
     }
-    void setR(float a) {
+    void setRe(float a) {
         re = a;
     }
     float getRe() {
